@@ -42,7 +42,7 @@ import os
 ```
 
 > **Note:** The notebook uses `%matplotlib widget` for interactive zooming. Install `ipympl` if needed:  
-> `pip install ipympl` # or: conda install -c conda-forge ipympl
+> conda install -c conda-forge ipympl
 
 ## How to Run
 
