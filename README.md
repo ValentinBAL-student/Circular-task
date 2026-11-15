@@ -87,5 +87,5 @@ The project was developed using a branch-based workflow to organise the work of 
 | `Recomputed_summarytable` | Contains the recomputation of movement statistics, the summary statistics table, and comparison with the marker file values. |
 | `Tuba_data_analysis` | Contains the analysis of the MouseReMoCo data recorded for the project. |
 | `Final-analysis` | Contains the final integrated analysis and modifications before merging the completed work into `main`. |
-| `README` | Contains updates and improvements to the project documentation and README file. |
+| `README` | Contains README file with brief project description. |
 
