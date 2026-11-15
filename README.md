@@ -21,8 +21,8 @@ Circular-task/
 ├── data/
 │   ├── 001MoDe_R1.csv              # Provided reference recording 
 │   ├── 001MoDe_R1.marker.csv        
-│   ├── tuba_data.csv               # Team member's own recording
-│   └── tuba_marker.csv             
+│   ├── tub_data.csv               # Team member's own recording
+│   └── tub_marker.csv             
 ├── src/
 │   └── circular.py              # contains reuseable functions
 ├── Circular_Task_MainNotebook.ipynb  # Main analysis notebook
