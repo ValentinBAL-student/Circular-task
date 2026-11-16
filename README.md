@@ -1,6 +1,27 @@
 # Circular Task Analysis
 
-A Python-based analysis of the MouseReMoCo circular steering task, as described in [Fauviaux et al. (2021)](https://hal.science/hal-03834500).
+## Introduction: What is this Experiment & Why Does It Matter?
+
+### The Task: A Continuous Steering Challenge
+Imagine driving a car at high speed inside a narrow circular racetrack:
+- Participants use a standard computer mouse to steer a circular cursor around a track bounded by two concentric circles.
+- The goal is simple yet challenging: **rotate as fast as possible while keeping the cursor strictly within the track boundaries to avoid errors**.
+- The experiment is structured into alternating timed blocks (e.g., 20 seconds of continuous steering followed by 20 seconds of rest), repeated over multiple cycles.
+
+### What is Being Tested Scientifically?
+In Human Movement Science (HMS), this paradigm evaluates several fundamental principles of motor control:
+
+1. **Continuous Sensorimotor Integration (The Visual-Motor Loop)**:
+   Unlike discrete pointing tasks (like clicking an icon), circular steering demands continuous, real-time control. The eyes track the cursor's deviation, the brain computes trajectory corrections, and the hand makes musculoskeletal adjustments multiple times per second.
+
+2. **Speed-Accuracy Trade-off (The Steering Law)**:
+   An extension of Fitts' Law, the Accot-Zhai Steering Law posits that moving faster naturally increases trajectory dispersion (variability). Participants must dynamically locate their optimal operating threshold between rotational speed and boundary avoidance.
+
+3. **Neural Information Throughput ($IPe$)**:
+   By measuring both spatial precision (effective tolerance $Te$) and rotational time ($MT$), the task models the human motor system as an information channel. The ultimate metric, **$IPe$ (bits/second)**, quantifies the brain's information processing bandwidth during continuous manual control.
+
+### Why Does It Matter?
+Originally investigated by [Fauviaux et al. (2021)](https://hal.science/hal-03834500), this task is primarily used in **neurorehabilitation** (e.g., assessing motor impairment and functional recovery in stroke patients) and **Human-Computer Interaction (HCI)** to benchmark input devices and human tracking limits.
 
 ## Overview
 
