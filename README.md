@@ -1,18 +1,44 @@
 # Circular Task Analysis
 
-A Python-based analysis of the MouseReMoCo circular steering task, as described in [Fauviaux et al. (2021)]https://hal.science/hal-03834500.
+## Introduction: The Circular Steering Task
+
+### 🎮 The Task in a Glance
+Steer a circular cursor with a mouse inside a concentric circular track:
+```text
+      ┌── [Outer Border] ──────────────┐
+      │     (● Cursor) ──► Rotate Fast │  Goal:
+      └── [Inner Border] ──────────────┘  Maximum Laps + Minimum Errors
+```
+
+```text
+       [ Continuous Sensorimotor Feedback Loop ]
+   👁️ Eye (Detects Drift) ──► 🧠 Brain (Computes Fix) ──► ✋ Hand (Adjusts Mouse)
+```
+
+---
+
+### 🎯 What Are We Measuring?
+
+| Component | Goal | Metric | Plain Meaning |
+|:---|:---|:---|:---|
+| 🏎️ **Speed** | Turn as fast as possible | **`MT/lap`** (s) | Seconds per lap (lower is faster) |
+| 🎯 **Precision** | Do not hit the borders | **`Te`** & **`error`** (%) | Trajectory spread & boundary violation rate |
+| ⚡ **Bandwidth** | Balance speed vs. accuracy | **`IPe`** (bit/s) | **Overall motor information processing speed** |
+
+> **💡 Why it exists**: Grounded in the **Steering Law** ([Fauviaux et al., 2021](https://hal.science/hal-03834500)), this task measures continuous human motor control bandwidth, widely used in **neurorehabilitation (e.g., stroke assessment)** and **human-computer interaction (HCI)**.
 
 ## Overview
 
 This project reproduces the graphical outputs and statistical table from a circular task recording, then runs the same analysis on a new recording made by a team member. The analysis covers:
 
-- Reading and parsing MouseReMoCo `.csv` and `.marker.csv` files
+- Reading and parsing MouseReMoCo `.csv` and `.marker.csv` files without external data manipulation libraries (pure Python & NumPy)
 - Splitting raw data into individual records using marker timestamps
 - Computing polar-coordinate statistics (radius, angle, effective tolerance)
 - Calculating Fitts' Law metrics: effective index of difficulty (IDe), movement time per lap (MT/lap), and information throughput (IPe)
 - Producing time-series and trajectory plots for each record
-- Comparison of the values provided in the marker files
-- Analysis of own recorded movement data
+- Comparison of recomputed values with reference values provided in marker files
+- Normalized cross-session comparison between reference and newly recorded movement data
+- Extended kinematic analysis (empirical radius distribution vs. Gaussian fit, and directional tangential speed profiles)
 
 ## Repository Structure
 
@@ -49,7 +75,11 @@ import os
 1. Clone this repository.
 git clone https://github.com/ValentinBAL-student/Circular-task.git 
 2. Open `Circular_Task_MainNotebook.ipynb` in Jupyter.
-3. Run all cells in order.
+3. Run `Circular_Task_MainNotebook.ipynb` to inspect the base reproduction and verification against the reference table.
+4. Run `Comparative_analysis.ipynb` to view:
+   - The normalized cross-subject comparison (Prof vs. Tub)
+   - The longitudinal evolution of throughput (IPe)
+   - The extended kinematic exploration (radius normality check and angular speed profiles)
 
 The notebook will:
 - Reproduce the expected plots and statistics table for `001MoDe_R1.csv`
@@ -71,6 +101,7 @@ The notebook will:
 
 - Tuba
 - Valentin Balbine
+- Jiangbin Long
 
 This project was completed collaboratively by the members of the group.
 The repository uses GitHub branches and commits to organise and track contributions made during the development of the project.
@@ -87,5 +118,6 @@ The project was developed using a branch-based workflow to organise the work of 
 | `Recomputed_summarytable` | Contains the recomputation of movement statistics, the summary statistics table, and comparison with the marker file values. |
 | `Tuba_data_analysis` | Contains the analysis of the MouseReMoCo data recorded for the project. |
 | `Final-analysis` | Contains the final integrated analysis and modifications before merging the completed work into `main`. |
+| `feat/kinematics-analysis` | Contains the extended kinematic analysis (radius normality fit and tangential speed modulation across sectors). |
 | `README` | Contains README file with brief project description. |
 
