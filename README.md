@@ -1,27 +1,31 @@
 # Circular Task Analysis
 
-## Introduction: What is this Experiment & Why Does It Matter?
+## Introduction: The Circular Steering Task
 
-### The Task: A Continuous Steering Challenge
-Imagine driving a car at high speed inside a narrow circular racetrack:
-- Participants use a standard computer mouse to steer a circular cursor around a track bounded by two concentric circles.
-- The goal is simple yet challenging: **rotate as fast as possible while keeping the cursor strictly within the track boundaries to avoid errors**.
-- The experiment is structured into alternating timed blocks (e.g., 20 seconds of continuous steering followed by 20 seconds of rest), repeated over multiple cycles.
+### 🎮 The Task in a Glance
+Steer a circular cursor with a mouse inside a concentric circular track:
+```text
+      ┌── [Outer Border] ──────────────┐
+      │     (● Cursor) ──► Rotate Fast │  Goal:
+      └── [Inner Border] ──────────────┘  Maximum Laps + Minimum Errors
+```
 
-### What is Being Tested Scientifically?
-In Human Movement Science (HMS), this paradigm evaluates several fundamental principles of motor control:
+```text
+       [ Continuous Sensorimotor Feedback Loop ]
+   👁️ Eye (Detects Drift) ──► 🧠 Brain (Computes Fix) ──► ✋ Hand (Adjusts Mouse)
+```
 
-1. **Continuous Sensorimotor Integration (The Visual-Motor Loop)**:
-   Unlike discrete pointing tasks (like clicking an icon), circular steering demands continuous, real-time control. The eyes track the cursor's deviation, the brain computes trajectory corrections, and the hand makes musculoskeletal adjustments multiple times per second.
+---
 
-2. **Speed-Accuracy Trade-off (The Steering Law)**:
-   An extension of Fitts' Law, the Accot-Zhai Steering Law posits that moving faster naturally increases trajectory dispersion (variability). Participants must dynamically locate their optimal operating threshold between rotational speed and boundary avoidance.
+### 🎯 What Are We Measuring?
 
-3. **Neural Information Throughput ($IPe$)**:
-   By measuring both spatial precision (effective tolerance $Te$) and rotational time ($MT$), the task models the human motor system as an information channel. The ultimate metric, **$IPe$ (bits/second)**, quantifies the brain's information processing bandwidth during continuous manual control.
+| Component | Goal | Metric | Plain Meaning |
+|:---|:---|:---|:---|
+| 🏎️ **Speed** | Turn as fast as possible | **`MT/lap`** (s) | Seconds per lap (lower is faster) |
+| 🎯 **Precision** | Do not hit the borders | **`Te`** & **`error`** (%) | Trajectory spread & boundary violation rate |
+| ⚡ **Bandwidth** | Balance speed vs. accuracy | **`IPe`** (bit/s) | **Overall motor information processing speed** |
 
-### Why Does It Matter?
-Originally investigated by [Fauviaux et al. (2021)](https://hal.science/hal-03834500), this task is primarily used in **neurorehabilitation** (e.g., assessing motor impairment and functional recovery in stroke patients) and **Human-Computer Interaction (HCI)** to benchmark input devices and human tracking limits.
+> **💡 Why it exists**: Grounded in the **Steering Law** ([Fauviaux et al., 2021](https://hal.science/hal-03834500)), this task measures continuous human motor control bandwidth, widely used in **neurorehabilitation (e.g., stroke assessment)** and **human-computer interaction (HCI)**.
 
 ## Overview
 
